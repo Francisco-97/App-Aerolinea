@@ -1,0 +1,42 @@
+.flight-list-container {
+    width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+
+    table {
+        width: 100%;
+
+        th,
+        td {
+            text-align: center;
+        }
+
+        th {
+            background-color: #e3f2fd;
+        }
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+    }
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #1976d2;
+    text-align: center;
+}
+
+#cerrar {
+  //background-image: url("../../assets/remove.png");
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+
+.info {
+  background-color: #2196f3eb;
+  color: red;
+}

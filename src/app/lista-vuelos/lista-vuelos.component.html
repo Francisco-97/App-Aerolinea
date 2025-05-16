@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Vuelos disponibles</h2>
+<mat-dialog-content class="flight-list-container">
+
+<table mat-table [dataSource]="flights" class="mat-elevation-z8">
+
+    <!--<ng-container matColumnDef="airline">
+      <th mat-header-cell *matHeaderCellDef>Aerolínea</th>
+      <td mat-cell *matCellDef="let flight">{{ flight.airline }}</td>
+    </ng-container>-->
+
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef>Origen</th>
+      <td mat-cell *matCellDef="let flight">{{ flight.from }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef>Destino</th>
+      <td mat-cell *matCellDef="let flight">{{ flight.to }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="departure">
+      <th mat-header-cell *matHeaderCellDef>Salida</th>
+      <td mat-cell *matCellDef="let flight">{{ flight.departure | date:'short' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="arrival">
+      <th mat-header-cell *matHeaderCellDef>Llegada</th>
+      <td mat-cell *matCellDef="let flight">{{ flight.arrival | date:'short' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Precio</th>
+      <td mat-cell *matCellDef="let flight">${{ flight.price }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let flight">
+         <mat-dialog-actions>
+           <button *ngIf="data.nombre" mat-raised-button mat-dialog-close (click)="reservar()" color="primary">Reservar</button>
+         </mat-dialog-actions>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</mat-dialog-content>

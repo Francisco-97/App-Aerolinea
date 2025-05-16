@@ -1,0 +1,144 @@
+<!--<div class="hero-section">
+  <div class="overlay">
+    <h1>Bienvenido a FlyWorld</h1>
+    <p>Tu experiencia de vuelo comienza aquí</p>
+  </div>
+</div>
+
+<section class="info-section">
+  <h2>Sobre Nosotros</h2>
+  <p>
+    FlyWorld es una aerolínea moderna con base en uno de los aeropuertos más avanzados del mundo. Conectamos destinos globales con la mejor atención, puntualidad y seguridad.
+  </p>
+</section>
+
+<section class="services-section">
+  <h2>Servicios del Aeropuerto</h2>
+  <ul>
+    <li>Salas VIP y zonas de descanso</li>
+    <li>Restaurantes gourmet y tiendas duty-free</li>
+    <li>Asistencia multilingüe y servicio de movilidad</li>
+  </ul>
+</section>
+
+<section class="booking-section">
+  <h2>Reserva tu vuelo</h2>
+  <form>
+    <label>Nombre completo</label>
+    <input type="text" placeholder="Ej: Juan Pérez" required />
+    
+    <label>Correo electrónico</label>
+    <input type="email" placeholder="Ej: juan@mail.com" required />
+    
+    <label>Destino</label>
+    <input type="text" placeholder="Ej: Madrid" required />
+    
+    <label>Fecha de salida</label>
+    <input type="date" required />
+
+    <button type="submit">Reservar</button>
+  </form>
+</section>-->
+
+<header class="hero-header">
+      <div class="hero-overlay">
+        <h1>Code Brigade Airlines</h1>
+        <p>Descubre el mundo con nosotros ✈️</p>
+      </div>
+    </header>
+
+    <nav>
+      <div class="nav-left">
+        <a href="#reserva">Reserva</a>
+        <a href="#info">Sobre Nosotros</a>
+        <a href="#beneficios">Beneficios</a>
+      </div>
+      <div class="nav-right">
+        <a *ngIf="!Name" mat-stroked-button (click)="openDialog()" class="login-btn">Iniciar sesión</a>
+        <span style="cursor: pointer;" [matMenuTriggerFor]="menu"> {{Name}} </span>
+        <!--<button mat-button [matMenuTriggerFor]="menu"> {{Name}} </button>-->
+        <mat-menu #menu="matMenu">
+          <button *ngIf="User === true" mat-menu-item>Consultar Millas</button>
+          <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesion</button>
+        </mat-menu>
+        <!--<button mat-button (click)="openDialog()" class="login-btn">Iniciar sesión</button>-->
+        <!--<a href="#login" class="login-btn">Registrarse</a>-->
+      </div>
+    </nav>
+
+    <mat-card class="section">
+  <h2>Planifica tu viaje</h2>
+
+  <form class="trip-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Origen</mat-label>
+      <input matInput placeholder="Ciudad de origen">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Destino</mat-label>
+      <input matInput placeholder="Ciudad de destino">
+    </mat-form-field>
+
+    <div class="date-fields">
+      <mat-form-field appearance="fill">
+        <mat-label>Salida</mat-label>
+        <input matInput [matDatepicker]="departurePicker">
+        <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
+        <mat-datepicker #departurePicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Regreso</mat-label>
+        <input matInput [matDatepicker]="returnPicker">
+        <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
+        <mat-datepicker #returnPicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </form>
+  <button type="submit" mat-raised-button (click)="goListaVuelo()" color="primary">Buscar vuelos</button>
+</mat-card>
+
+    <div class="success-message" id="successMsg">
+      ✅ ¡Reserva enviada! Recibirás un correo con los detalles.
+    </div>
+
+    <div id="info" class="about-section">
+      <h2>Sobre Code Brigade Airlines</h2>
+      <div
+        style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center"
+      >
+        <div style="flex: 1">
+          <p>
+            Fundada en 1995, Code Brigade es una aerolínea global que conecta más de
+            80 destinos en 5 continentes. Nuestra misión es ofrecer viajes
+            cómodos, seguros y sostenibles con un toque humano.
+          </p>
+          <p>
+            Con más de 300 aviones modernos y un equipo de profesionales
+            dedicados, Code Brigade ha sido galardonada por su servicio al cliente y
+            puntualidad.
+          </p>
+        </div>
+        <img
+          src="../../assets/Tripulacion-de-aerolinea.jpg"
+          alt="Tripulación de aerolínea"
+          style="width: 300px; border-radius: 1rem; flex-shrink: 0"
+        />
+      </div>
+    </div>
+
+    <section id="beneficios" class="info-section">
+      <h2>¿Por qué elegirnos?</h2>
+      <ul style="list-style: none; padding-left: 0">
+        <li>✈️ Asientos cómodos y con espacio extra</li>
+        <li>📶 Conexión Wi-Fi gratuita en la mayoría de rutas</li>
+        <li>🌍 Atención 24/7 en múltiples idiomas</li>
+        <li>💼 Membresía FlyClub con beneficios exclusivos</li>
+        <li>🔄 Política flexible de cambios y cancelaciones</li>
+      </ul>
+    </section>
+
+    <footer>
+      &copy; 2025 Code Brigade Airlines. Todos los derechos reservados.
+    </footer>

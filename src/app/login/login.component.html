@@ -1,0 +1,97 @@
+<mat-dialog-content class="auth-container">
+<div class="tabs">
+    <div [class.active]="activeTab === 'login'" (click)="switchTab('login')">Iniciar Sesión</div>
+    <div [class.active]="activeTab === 'register'" (click)="switchTab('register')">Registrarse</div>
+</div>
+
+<!-- Login Form -->
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" *ngIf="activeTab === 'login'">
+    <label>RNC o ID</label>
+    <input formControlName="email" [(ngModel)]="Name" type="email" required />
+    <label>Contraseña</label>
+    <input formControlName="password" [(ngModel)]="password" type="password" required />
+    <button type="submit" >Ingresar</button><!--[mat-dialog-close]="Name"-->
+    <a class="forgot-password" href="#">¿Olvidaste tu contraseña?</a>
+</form>
+
+<!-- Register Form -->
+<form [formGroup]="registerForm" (ngSubmit)="onRegister()" *ngIf="activeTab === 'register'">
+    <div class="form-row">
+        <div class="col-md-6">
+            <label>Nombre</label>
+            <input formControlName="name" type="text" required />
+        </div>
+        <div class="col-md-6">
+            <label>Apellidos</label>
+            <input formControlName="apellido" type="text" required />
+        </div>
+    </div>
+
+    
+    <div class="form-row">
+        <div class="col-md-4">
+            <label>Nacionalidad</label>
+            <input class="nacionalidad" formControlName="nacionalidad" type="text">
+        </div>
+        <div class="col-md-4">
+            <label>Identificación</label>
+            <input class="nacionalidad" type="text"/>
+        </div>
+        <div class="col-md-4">
+            <label>Tipo</label>
+            <select class="nacionalidad" formControlName="tip">
+                <option value="1">Cedula</option>
+                <option value="2">RNC</option>
+            </select>
+        </div>
+    </div>
+
+    
+    <div class="form-row">
+        <div class="col-md-6">
+            <label>Fecha de Nacimiento</label>
+            <input type="date"/>
+        </div>
+        <div class="col-md-6">
+            <label>Sexo</label>
+            <select formControlName="sexo">
+                <option value="1">Mujer</option>
+                <option value="2">Hombre</option>
+            </select>
+        </div>
+    </div>
+
+    
+    <div class="form-row">
+        <div class="col-md-6">
+            <label>Número de teléfono</label>
+            <input type="tel">
+        </div>
+        <div class="col-md-6">
+            <label>Correo electrónico</label>
+            <input formControlName="email" type="email" required />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6">
+            <label>Contraseña</label>
+            <input formControlName="password" type="password" required />
+        </div>
+        <div class="col-md-6">
+            <label>Confirmar contraseña</label>
+            <input formControlName="confirmPassword" type="password" required />
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+    </div>
+    <button type="submit">Crear cuenta</button>
+</form>
+</mat-dialog-content>
+
+
+
+            <!---->

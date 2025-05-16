@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+//html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*#cerrar {
+  background-image: url("./assets/remove.png");
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}*/
+
+.info {
+  --mdc-snackbar-container-color: #2196f3eb
+}
+
+.error {
+  --mdc-snackbar-container-color: #f44336
+}
+
+.acceso {
+  --mdc-snackbar-container-color: #28a745
+}
