@@ -14,12 +14,14 @@ import { ToastrService } from 'ngx-toastr';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { NotificacionesComponent } from '../notificaciones/notificaciones.component';
 import { MatMenuModule } from '@angular/material/menu';
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms'
+import { ListaReservacionesComponent } from '../lista-reservaciones/lista-reservaciones.component';
 
 @Component({
   selector: 'app-home',
   imports: [MatButtonModule, MatDialogModule, MatCardModule, MatNativeDateModule, MatDatepickerModule,
-    MatInputModule, MatFormFieldModule, MatMenuModule, NgIf
+    MatInputModule, MatFormFieldModule, MatMenuModule, NgIf, FormsModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -31,6 +33,9 @@ export class HomeComponent {
   private snackBar = inject(MatSnackBar)
   Name: string;
   User: boolean = false
+  email: string = "atencion@aerisairlines.com | info@aerisairlines.com";
+  destino: string;
+  origen: string;
 
   constructor(private router: Router,
     //private dialog = inject(MatDialog),
@@ -68,7 +73,8 @@ export class HomeComponent {
       maxWidth: '90vw',
       maxHeight: '90vw',
       data: {
-        nombre: this.Name
+        nombre: this.Name,
+        filtro: this.origen ?? this.destino
       }
     })
     dialogRef.afterClosed().subscribe(result =>{
@@ -79,6 +85,15 @@ export class HomeComponent {
     //this.notify.success("Hola", "Ok")
     //this.notify.vueloReservado()
     //this.shormessa("Hola")
+  }
+
+  goreservaciones(){
+    const dialogRef = this.dialog.open(ListaReservacionesComponent, {
+      width: '79%',
+      height: '85%',
+      maxWidth: '90vw',
+      maxHeight: '90vw',
+    })
   }
 
   shormessa(message: string, title?: string){

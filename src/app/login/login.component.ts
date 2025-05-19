@@ -49,11 +49,11 @@ export class LoginComponent {
   }
 
   onLogin(){
-    if(this.Name === "1234" || this.password === "1234"){
+    if(this.Name === "1234" && this.password === "1234"){
       this.Name = "Usuario Minorista";
       this.cerrar(this.Name)
     }
-    else if(this.Name === "F1234" || this.password === "1234"){
+    else if(this.Name === "F1234" && this.password === "1234"){
       this.Name = "Usuario Corporativo";
       this.cerrar(this.Name)
     }

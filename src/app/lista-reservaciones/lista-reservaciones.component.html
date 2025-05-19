@@ -1,0 +1,36 @@
+<div class="ceerarContent">
+    <i class="float-right pointer" mat-dialog-close id="cerrar"></i>
+</div>
+<h2 mat-dialog-title mat-dialog-close class="titulo">Mis Reservaciones de Vuelos</h2>
+<mat-dialog-content class="auth-container">
+    
+<div class="contenedor-tabla">
+  <table>
+    <thead>
+      <tr>
+        <th>N° Vuelo</th>
+        <th>Asientos Libres (Económica / Ejecutiva)</th>
+        <th>Piloto</th>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Salida</th>
+        <th>Regreso</th>
+        <th>Solicitud</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vuelo of vuelos">
+        <td>{{ vuelo.numero }}</td>
+        <td>{{ vuelo.asientos }}</td>
+        <td>{{ vuelo.piloto }}</td>
+        <td>{{ vuelo.origen }}</td>
+        <td>{{ vuelo.destino }}</td>
+        <td>{{ vuelo.salida }}</td>
+        <td>{{ vuelo.regreso }}</td>
+        <td>{{ vuelo.solicitud }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</mat-dialog-content>

@@ -1,144 +1,149 @@
-<!--<div class="hero-section">
-  <div class="overlay">
-    <h1>Bienvenido a FlyWorld</h1>
-    <p>Tu experiencia de vuelo comienza aquí</p>
+<nav>
+  <div class="nav-left">
+    <a href="#reserva">Reserva</a>
+    <a href="#info">Sobre Nosotros</a>
+    <a href="#beneficios">Beneficios</a>
   </div>
-</div>
-
-<section class="info-section">
-  <h2>Sobre Nosotros</h2>
-  <p>
-    FlyWorld es una aerolínea moderna con base en uno de los aeropuertos más avanzados del mundo. Conectamos destinos globales con la mejor atención, puntualidad y seguridad.
-  </p>
-</section>
-
-<section class="services-section">
-  <h2>Servicios del Aeropuerto</h2>
-  <ul>
-    <li>Salas VIP y zonas de descanso</li>
-    <li>Restaurantes gourmet y tiendas duty-free</li>
-    <li>Asistencia multilingüe y servicio de movilidad</li>
-  </ul>
-</section>
-
-<section class="booking-section">
-  <h2>Reserva tu vuelo</h2>
-  <form>
-    <label>Nombre completo</label>
-    <input type="text" placeholder="Ej: Juan Pérez" required />
-    
-    <label>Correo electrónico</label>
-    <input type="email" placeholder="Ej: juan@mail.com" required />
-    
-    <label>Destino</label>
-    <input type="text" placeholder="Ej: Madrid" required />
-    
-    <label>Fecha de salida</label>
-    <input type="date" required />
-
-    <button type="submit">Reservar</button>
-  </form>
-</section>-->
-
-<header class="hero-header">
-      <div class="hero-overlay">
-        <h1>Code Brigade Airlines</h1>
-        <p>Descubre el mundo con nosotros ✈️</p>
-      </div>
-    </header>
-
-    <nav>
-      <div class="nav-left">
-        <a href="#reserva">Reserva</a>
-        <a href="#info">Sobre Nosotros</a>
-        <a href="#beneficios">Beneficios</a>
-      </div>
-      <div class="nav-right">
-        <a *ngIf="!Name" mat-stroked-button (click)="openDialog()" class="login-btn">Iniciar sesión</a>
-        <span style="cursor: pointer;" [matMenuTriggerFor]="menu"> {{Name}} </span>
-        <!--<button mat-button [matMenuTriggerFor]="menu"> {{Name}} </button>-->
-        <mat-menu #menu="matMenu">
-          <button *ngIf="User === true" mat-menu-item>Consultar Millas</button>
-          <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesion</button>
-        </mat-menu>
-        <!--<button mat-button (click)="openDialog()" class="login-btn">Iniciar sesión</button>-->
-        <!--<a href="#login" class="login-btn">Registrarse</a>-->
-      </div>
-    </nav>
-
-    <mat-card class="section">
-  <h2>Planifica tu viaje</h2>
-
-  <form class="trip-form">
-    <mat-form-field appearance="fill">
-      <mat-label>Origen</mat-label>
-      <input matInput placeholder="Ciudad de origen">
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Destino</mat-label>
-      <input matInput placeholder="Ciudad de destino">
-    </mat-form-field>
-
-    <div class="date-fields">
-      <mat-form-field appearance="fill">
-        <mat-label>Salida</mat-label>
-        <input matInput [matDatepicker]="departurePicker">
-        <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
-        <mat-datepicker #departurePicker></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Regreso</mat-label>
-        <input matInput [matDatepicker]="returnPicker">
-        <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
-        <mat-datepicker #returnPicker></mat-datepicker>
-      </mat-form-field>
+  <div class="nav-right">
+    <a *ngIf="!Name" mat-stroked-button (click)="openDialog()" class="login-btn">Iniciar sesión</a>
+    <span style="cursor: pointer;" [matMenuTriggerFor]="menu"> {{Name}} </span>
+    <!--<button mat-button [matMenuTriggerFor]="menu"> {{Name}} </button>-->
+    <mat-menu #menu="matMenu">
+      <button *ngIf="User === true" mat-menu-item>Consultar Millas</button>
+      <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesion</button>
+      <button mat-menu-item (click)="goreservaciones()" >Reservaciones</button>
+    </mat-menu>
+    <!--<button mat-button (click)="openDialog()" class="login-btn">Iniciar sesión</button>-->
+    <!--<a href="#login" class="login-btn">Registrarse</a>-->
+  </div>
+</nav>
+<!-- Hero Section -->
+<section class="bg-blue-900 text-white text-center py-20 px-6">
+    <h1 class="text-4xl font-bold mb-4">Conectamos el Caribe con el mundo</h1>
+    <p class="text-lg mb-6">Desde República Dominicana hacia más de 60 destinos globales, con calidad, puntualidad y hospitalidad caribeña.</p>
+    <div class="space-x-4">
+      <a (click)="goListaVuelo()" class="bg-white text-blue-900 font-semibold py-2 px-4 rounded">Reserva tu vuelo</a>
+      <a href="#destinos" class="border border-white py-2 px-4 rounded">Conoce nuestros destinos</a>
     </div>
-  </form>
-  <button type="submit" mat-raised-button (click)="goListaVuelo()" color="primary">Buscar vuelos</button>
-</mat-card>
+  </section>
 
-    <div class="success-message" id="successMsg">
-      ✅ ¡Reserva enviada! Recibirás un correo con los detalles.
-    </div>
+ <!-- Sobre AERIS -->
+  <section id="info" class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Sobre AERIS Airlines</h2>
+    <p>AERIS Airlines es una aerolínea dominicana de servicio completo fundada en 2015, con sede en Santo Domingo y centro de operaciones en el Aeropuerto Internacional de Las Américas (SDQ). Operamos una red global conectando América, Europa, Asia, África y Oceanía, brindando una experiencia de viaje moderna, segura y con la calidez del Caribe.</p>
+  </section>
 
-    <div id="info" class="about-section">
-      <h2>Sobre Code Brigade Airlines</h2>
-      <div
-        style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center"
-      >
-        <div style="flex: 1">
-          <p>
-            Fundada en 1995, Code Brigade es una aerolínea global que conecta más de
-            80 destinos en 5 continentes. Nuestra misión es ofrecer viajes
-            cómodos, seguros y sostenibles con un toque humano.
-          </p>
-          <p>
-            Con más de 300 aviones modernos y un equipo de profesionales
-            dedicados, Code Brigade ha sido galardonada por su servicio al cliente y
-            puntualidad.
-          </p>
-        </div>
-        <img
-          src="../../assets/Tripulacion-de-aerolinea.jpg"
-          alt="Tripulación de aerolínea"
-          style="width: 300px; border-radius: 1rem; flex-shrink: 0"
-        />
+<!-- Destinos con galería de imágenes -->
+  <section id="destinos" class="bg-gray-100 py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Destinos alrededor del mundo</h2>
+    <p class="mb-8">Con más de 60 destinos, volamos a ciudades clave en los cinco continentes.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div><!--https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/d8/22/50.jpg-->
+        <img src="../../assets/newyork.jpeg" alt="Nueva York" class="rounded-lg shadow" />
+        <p class="mt-2 font-semibold">Nueva York, EE.UU.</p>
+      </div>
+      <div>
+        <img src="../../assets/paris.jpeg" alt="París" class="rounded-lg shadow" />
+        <p class="mt-2 font-semibold">París, Francia</p>
+      </div>
+      <div>
+        <img src="../../assets/tokio.jpeg" alt="Tokio" class="rounded-lg shadow" />
+        <p class="mt-2 font-semibold">Tokio, Japón</p>
+      </div>
+      <div>
+        <img src="../../assets/dubai.jpeg" alt="Dubái" class="rounded-lg shadow" />
+        <p class="mt-2 font-semibold">Dubái, Emiratos Árabes</p>
+      </div>
+      <div>
+        <img src="../../assets/sidney.jpeg" alt="Sídney" class="rounded-lg shadow" />
+        <p class="mt-2 font-semibold">Sídney, Australia</p>
+      </div>
+      <div>
+        <img src="../../assets/BuenosAires.jpeg" alt="Buenos Aires" class="rounded-lg shadow" />
+        <p class="mt-2 font-semibold">Buenos Aires, Argentina</p>
       </div>
     </div>
+    <a href="#" class="inline-block mt-8 bg-blue-900 text-white py-2 px-4 rounded">Ver todos los destinos</a>
+  </section>
 
-    <section id="beneficios" class="info-section">
-      <h2>¿Por qué elegirnos?</h2>
-      <ul style="list-style: none; padding-left: 0">
-        <li>✈️ Asientos cómodos y con espacio extra</li>
-        <li>📶 Conexión Wi-Fi gratuita en la mayoría de rutas</li>
-        <li>🌍 Atención 24/7 en múltiples idiomas</li>
-        <li>💼 Membresía FlyClub con beneficios exclusivos</li>
-        <li>🔄 Política flexible de cambios y cancelaciones</li>
-      </ul>
-    </section>
+<!-- Buscador de vuelos -->
+<section id="reserva" class="py-16 px-6 bg-white max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Busca tu vuelo</h2>
+    <form (ngSubmit)="goListaVuelo()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="text" placeholder="Número de vuelo" class="border p-3 rounded w-full" />
+      <input type="text" placeholder="Origen" [(ngModel)]="origen" name="origen" class="border p-3 rounded w-full" />
+      <input type="text" placeholder="Destino" [(ngModel)]="destino" name="destino" class="border p-3 rounded w-full" />
+      <input type="date" placeholder="Fecha de salida" class="border p-3 rounded w-full" />
+      <input type="date" placeholder="Fecha de regreso" class="border p-3 rounded w-full" />
+      <input type="number" placeholder="Cantidad de pasajeros" min="1" class="border p-3 rounded w-full" />
+      <div class="flex items-center space-x-2">
+        <input type="radio" name="tipo" id="ida-vuelta" checked>
+        <label for="ida-vuelta">Ida y vuelta</label>
+        <input type="radio" name="tipo" id="solo-ida">
+        <label for="solo-ida">Solo ida</label>
+      </div>
+      <button type="submit" class="bg-blue-900 text-white py-3 px-6 rounded mt-2 md:mt-0">Buscar</button>
+    </form>
+  </section>
 
-    <footer>
-      &copy; 2025 Code Brigade Airlines. Todos los derechos reservados.
-    </footer>
+<!-- Flota -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Tecnología y confort en el aire</h2>
+    <p class="mb-4">Nuestra flota moderna garantiza eficiencia, sostenibilidad y comodidad:</p>
+    <ul class="list-disc text-left list-inside">
+      <li>12 Airbus A320neo (rutas regionales)</li>
+      <li>8 Boeing 787 Dreamliner (vuelos internacionales)</li>
+      <li>6 Embraer E195-E2 (vuelos caribeños y cortos)</li>
+    </ul>
+  </section>
+
+  <!-- Servicios a bordo -->
+  <section class="bg-gray-100 py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Una experiencia pensada para ti</h2>
+    <ul class="list-disc text-left list-inside max-w-xl mx-auto">
+      <li>Pantallas individuales y Wi-Fi de alta velocidad</li>
+      <li>Tres clases de servicio: Económica, Premium y Ejecutiva</li>
+      <li>Menús dominicanos e internacionales</li>
+      <li>Salones VIP y check-in prioritario</li>
+      <li>Programa de viajero frecuente: AERIS Rewards</li>
+    </ul>
+  </section>
+
+  <!-- Programa Corporativo -->
+  <section id="beneficios" class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Beneficios exclusivos para empresas y viajeros frecuentes</h2>
+    <p class="mb-4">Con nuestro programa <strong>AERIS Corporate Miles</strong>, las empresas pueden acumular millas por cada vuelo y canjearlas por descuentos, upgrades y otros beneficios exclusivos.</p>
+    <ul class="list-disc text-left list-inside">
+      <li>Millas acumulables en cuentas individuales o corporativas</li>
+      <li>Descuentos automáticos en próximas reservas</li>
+      <li>Reportes de consumo y tarifas especiales</li>
+      <li>Atención personalizada a empresas</li>
+    </ul>
+    <a href="#" class="inline-block mt-6 bg-blue-900 text-white py-2 px-4 rounded">Unirse al programa corporativo</a>
+  </section>
+
+  <!-- Sostenibilidad -->
+  <section class="bg-gray-100 py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Volar responsablemente</h2>
+    <p>En AERIS, la sostenibilidad es prioridad: flota ecoeficiente, eliminación de plásticos de un solo uso, programas de compensación de carbono y alianzas para reforestación.</p>
+  </section>
+
+  <!-- Contacto -->
+  <section class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
+    <p class="mb-4">Torre Empresarial del Caribe, Piso 18<br/>Av. Winston Churchill #1250, Santo Domingo, RD</p>
+    <p class="mb-2">📞 RD: +1 (809) 555-2000 | Internacional: +1 (888) 555-AERIS (23747)</p>
+    <p class="mb-2">📩 {{email}}</p>
+    <div class="mt-4 space-x-4">
+      <a href="#" class="text-blue-600">Facebook</a>
+      <a href="#" class="text-blue-600">Instagram</a>
+      <a href="#" class="text-blue-600">Twitter</a>
+      <a href="#" class="text-blue-600">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-4">
+    <p>© 2025 AERIS Airlines. Todos los derechos reservados.</p>
+    <p class="text-sm">Políticas de privacidad · Términos de servicio · Mapa del sitio</p>
+  </footer>
