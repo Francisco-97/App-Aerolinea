@@ -28,13 +28,13 @@
   </section>
 
  <!-- Sobre AERIS -->
-  <section id="info" class="py-16 px-6 max-w-4xl mx-auto text-center">
+  <section *ngIf="!Name" id="info" class="py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Sobre AERIS Airlines</h2>
     <p>AERIS Airlines es una aerolínea dominicana de servicio completo fundada en 2015, con sede en Santo Domingo y centro de operaciones en el Aeropuerto Internacional de Las Américas (SDQ). Operamos una red global conectando América, Europa, Asia, África y Oceanía, brindando una experiencia de viaje moderna, segura y con la calidez del Caribe.</p>
   </section>
 
 <!-- Destinos con galería de imágenes -->
-  <section id="destinos" class="bg-gray-100 py-16 px-6 text-center">
+  <section *ngIf="!Name" id="destinos" class="bg-gray-100 py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Destinos alrededor del mundo</h2>
     <p class="mb-8">Con más de 60 destinos, volamos a ciudades clave en los cinco continentes.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -67,7 +67,7 @@
   </section>
 
 <!-- Buscador de vuelos -->
-<section id="reserva" class="py-16 px-6 bg-white max-w-4xl mx-auto">
+<section  id="reserva" class="py-16 px-6 bg-white max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Busca tu vuelo</h2>
     <form (ngSubmit)="goListaVuelo()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <input type="text" placeholder="Número de vuelo" class="border p-3 rounded w-full" />
@@ -87,7 +87,7 @@
   </section>
 
 <!-- Flota -->
-  <section class="py-16 px-6 max-w-4xl mx-auto text-center">
+  <section *ngIf="!Name" class="py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Tecnología y confort en el aire</h2>
     <p class="mb-4">Nuestra flota moderna garantiza eficiencia, sostenibilidad y comodidad:</p>
     <ul class="list-disc text-left list-inside">
@@ -98,7 +98,7 @@
   </section>
 
   <!-- Servicios a bordo -->
-  <section class="bg-gray-100 py-16 px-6 text-center">
+  <section *ngIf="!Name" class="bg-gray-100 py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Una experiencia pensada para ti</h2>
     <ul class="list-disc text-left list-inside max-w-xl mx-auto">
       <li>Pantallas individuales y Wi-Fi de alta velocidad</li>
@@ -110,7 +110,7 @@
   </section>
 
   <!-- Programa Corporativo -->
-  <section id="beneficios" class="py-16 px-6 max-w-4xl mx-auto text-center">
+  <section *ngIf="!Name" id="beneficios" class="py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Beneficios exclusivos para empresas y viajeros frecuentes</h2>
     <p class="mb-4">Con nuestro programa <strong>AERIS Corporate Miles</strong>, las empresas pueden acumular millas por cada vuelo y canjearlas por descuentos, upgrades y otros beneficios exclusivos.</p>
     <ul class="list-disc text-left list-inside">
@@ -123,13 +123,13 @@
   </section>
 
   <!-- Sostenibilidad -->
-  <section class="bg-gray-100 py-16 px-6 text-center">
+  <section *ngIf="!Name" class="bg-gray-100 py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Volar responsablemente</h2>
     <p>En AERIS, la sostenibilidad es prioridad: flota ecoeficiente, eliminación de plásticos de un solo uso, programas de compensación de carbono y alianzas para reforestación.</p>
   </section>
 
   <!-- Contacto -->
-  <section class="py-16 px-6 text-center">
+  <section *ngIf="!Name" class="py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
     <p class="mb-4">Torre Empresarial del Caribe, Piso 18<br/>Av. Winston Churchill #1250, Santo Domingo, RD</p>
     <p class="mb-2">📞 RD: +1 (809) 555-2000 | Internacional: +1 (888) 555-AERIS (23747)</p>
