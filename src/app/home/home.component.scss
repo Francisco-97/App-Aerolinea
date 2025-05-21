@@ -8,8 +8,8 @@
 body {
     margin: 0;
     font-family: "Segoe UI", sans-serif;
-    background: #f0f4f8;
-    color: #333;
+    //background: #f0f4f8;
+    color:#BFBFBF
 }
 
 header {
@@ -26,7 +26,7 @@ header h1 {
 }
 
 nav {
-    background: #ffffff;
+    //background: #ffffff;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -47,24 +47,24 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #2193b0;
+     color: #D72638;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #1b7b97;
+    color: #f7f7ffd5;
 }
 
 .login-btn {
     padding: 0.5rem 1rem;
-    border: 2px solid #2193b0;
+    border: 2px solid #85b2bd;
     border-radius: 0.5rem;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .login-btn:hover {
-    background-color: #2193b0;
+    background-color: #4e4b4bda;
     color: white;
 }
 
@@ -74,9 +74,27 @@ nav a:hover {
     margin: auto;
     animation: slideUp 0.8s ease;
 }
+.card {
+  background-color: #1E1E1E;
+  padding: 30px;
+  //border-radius: 10px;
+  height: 300px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+#destinos{
+    background: #15572400;
+    color:#BFBFBF
+}
 
+.fondo{
+    margin-top: 3%;
+      background-color: #1E1E1E;
+          color:#BFBFBF;
+     box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
 .form-container {
-    background: white;
+    //background: white;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -173,7 +191,7 @@ button:hover {
 }
 
 footer {
-    background: #2c3e50;
+    background: #01050a;
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -231,16 +249,18 @@ footer {
 
 input[type="text"],
 input[type="email"],
-input[type="date"] {
+input[type="date"],
+input[type="number"] {
     padding: 0.75rem;
     border-radius: 0.5rem;
     border: 1px solid #ccc;
+    background-color: #1b7b97;
     font-size: 1rem;
 }
 
 button[type="submit"] {
-    background: #2193b0;
-    color: white;
+    background: #D72638;
+    color: FFFFFF;
     border: none;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -250,7 +270,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #176d85;
+    background-color: #8B1E2D;
 }
 
 .custom-dialog {
