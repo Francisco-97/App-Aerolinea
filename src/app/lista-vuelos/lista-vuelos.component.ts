@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { MAT_DIALOG_DATA, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
 import { NotificacionesService } from '../servios/notificaciones.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { SeleccionarAsientosComponent } from "../seleccionar-asientos/seleccionar-asientos.component";
 
 interface Flight {
   id: number;
@@ -32,7 +34,7 @@ interface Vuelos {
 @Component({
   selector: 'app-lista-vuelos',
   imports: [MatTableModule, MatCardModule, MatButtonModule, CommonModule, MatButtonModule,
-    MatDialogContent, MatDialogActions, MatDialogClose, MatDialogTitle],
+    MatDialogContent, MatDialogActions, MatDialogClose, MatDialogTitle, SeleccionarAsientosComponent],
   templateUrl: './lista-vuelos.component.html',
   styleUrl: './lista-vuelos.component.scss'
 })
@@ -520,7 +522,9 @@ vuelos = [
 
 datasource = new MatTableDataSource(this.vuelos);
 
-  constructor(private _notifacion: NotificacionesService,
+  constructor(
+    private router: Router,
+    private _notifacion: NotificacionesService,
     //private dialogreff = MatDialogRef<ListaVuelosComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ){}
@@ -537,8 +541,9 @@ datasource = new MatTableDataSource(this.vuelos);
     }
   }
 
-  reservar(){
-    this._notifacion.vueloReservado();
+  reservar(): void {
+    this.router.navigateByUrl('/asientos')
+    // this._notifacion.vueloReservado();
   }
 
   applyFilter(evento: Event){

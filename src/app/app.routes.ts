@@ -15,7 +15,4 @@ export const routes: Routes = [
     {path: 'login', component:LoginComponent},
     {path: 'reservaciones', component:ListaReservacionesComponent},
     {path: 'asientos', component:SeleccionarAsientosComponent}
-
-
-
 ];

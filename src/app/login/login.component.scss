@@ -9,6 +9,9 @@
 }*/
 body{
     background-image:url(../../assets/POSS/DARK-GEN.png) ;
+    background-color: black;
+    background-size: cover;  /* Opcional para cubrir toda la pantalla */
+    background-repeat: no-repeat;
 }
 .tabs {
     display: flex;

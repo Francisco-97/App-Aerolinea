@@ -10,42 +10,42 @@ export class NotificacionesService {
   constructor(public snackBar: MatSnackBar) { 
   }
 
-  success(message: string, title?: string){
+  success(message: string, title?: string, time?: number){
     this.snackBar.openFromComponent(NotificacionesComponent, {
       data: {
         message: message,
         title: title,
         icon: 'fa-check-circle'
       },
-      duration: 5000,
+      duration: time ?? 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: ['info']
     })
   }
 
-  acceder(message: string, title?: string){
+  acceder(message: string, title?: string, time?: number){
     this.snackBar.openFromComponent(NotificacionesComponent, {
       data: {
         message: message,
         title: title,
         icon: 'fa-check-circle'
       },
-      duration: 5000,
+      duration: time ?? 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: ['acceso']
     })
   }
 
-  error(message: string, title?: string){
+  error(message: string, title?: string, time?: number){
     this.snackBar.openFromComponent(NotificacionesComponent, {
       data: {
         message: message,
         title: title,
         icon: 'fa-check-circle'
       },
-      duration: 5000,
+      duration: time ?? 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: ['error']

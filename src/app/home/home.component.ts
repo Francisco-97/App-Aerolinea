@@ -3,7 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { ListaVuelosComponent } from '../lista-vuelos/lista-vuelos.component';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -20,7 +20,7 @@ import { ListaReservacionesComponent } from '../lista-reservaciones/lista-reserv
 
 @Component({
   selector: 'app-home',
-  imports: [MatButtonModule, MatDialogModule, MatCardModule, MatNativeDateModule, MatDatepickerModule,
+  imports: [RouterLink, MatButtonModule, MatDialogModule, MatCardModule, MatNativeDateModule, MatDatepickerModule,
     MatInputModule, MatFormFieldModule, MatMenuModule, NgIf, FormsModule
   ],
   templateUrl: './home.component.html',

@@ -1,6 +1,24 @@
-<p>seleccionar-asientos works!</p>
-
-  <h2>Seleccione su asiento</h2>
-  <div class="airplane" id="airplane">
-    <!-- Asientos se insertan con JS -->
+<h2>Seleccione su asiento</h2>
+<div class="p-4">
+  <div class="p-4 space-y-2 bg-gray-100 rounded-md max-w-xl mx-auto" id="airplane">
+    <button class="text-sm px-3 py-2 rounded shadow transition bg-white hover:bg-blue-500" [routerLink]="['/listaVuelo']" routerLinkActive="router-link-active" >Volver atras</button>
+    <div *ngFor="let row of rows" class="flex justify-center gap-2">
+      <ng-container *ngFor="let seat of seatsPerRow">
+        <div *ngIf="seat === ''" class="w-6"></div>
+        <button
+          *ngIf="seat !== ''"
+          class="seat text-sm px-3 py-2 rounded shadow transition bg-white hover:bg-blue-500"
+          [class.bg-blue-500]="isSelected(row + seat)"
+          [class.text-white]="isSelected(row + seat)"
+          [class.cursor-not-allowed]="isOccupied(row + seat)"
+          [class.opacity-50]="isOccupied(row + seat)"
+          [disabled]="isOccupied(row + seat)"
+          (click)="toggleSeat(row + seat)"
+          [attr.data-seat]="row + seat">
+          {{ row + seat }}
+        </button>
+      </ng-container>
+    </div>
+    <button (click)="onSubmit()" class="text-sm px-3 py-2 rounded shadow transition bg-white hover:bg-blue-500">Guardar</button>
   </div>
+</div>
