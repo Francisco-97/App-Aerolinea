@@ -1,6 +1,6 @@
 <nav>
-  <div class="nav-left">
-       <a href="#destinos">Destinos</a>
+  <div class="nav-left nav">
+        <a href="#destinos">Destinos</a>
     <a href="#reserva">Buscar Vuelos</a>
     <a href="#beneficios">Beneficios</a>
     <a href="#info">Sobre Nosotros</a>
@@ -19,42 +19,42 @@
   </div>
 </nav>
 <!-- Hero Section -->
-<section class="card bg-blue-900 text-white text-center py-20 px-6">
+<section class="fondo fnd bg-blue-900 text-white text-center py-20 px-6">
     <h1 class="text-4xl font-bold mb-4">Conectamos el Caribe con el mundo</h1>
     <p class="text-lg mb-6">Desde República Dominicana hacia más de 60 destinos globales, con calidad, puntualidad y hospitalidad caribeña.</p>
     <div class="space-x-4">
-      <a (click)="goListaVuelo()" class="bg-white text-blue-900 font-semibold py-2 px-4 rounded">Reserva tu vuelo</a>
+      <a (click)="goListaVuelo()" class="reserv bg-white text-blue-900 font-semibold py-2 px-4 rounded">Reserva tu vuelo</a>
  
     </div>
   </section>
 
  
 <!-- Destinos con galería de imágenes -->
-  <section *ngIf="!Name" id="destinos" class="bg-gray-100 py-16 px-6 text-center">
+  <section *ngIf="!Name" id="destinos" class="ben bg-gray-100 py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Destinos alrededor del mundo</h2>
     <p class="mb-8">Con más de 60 destinos, volamos a ciudades clave en los cinco continentes.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-      <div><!--https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/d8/22/50.jpg-->
-        <img src="../../assets/newyork.jpeg" alt="Nueva York" class="rounded-lg shadow" />
-        <p class="mt-2 font-semibold">Nueva York, EE.UU.</p>
+      <div class="fot"><!--https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/d8/22/50.jpg-->
+        <img src="../../assets/newyork.jpeg" alt="Nueva York" class=" rounded-lg shadow" />
+        <p class="city mt-2 font-semibold">Nueva York, EE.UU.</p>
       </div>
-      <div>
+      <div class="fot">
         <img src="../../assets/paris.jpeg" alt="París" class="rounded-lg shadow" />
         <p class="mt-2 font-semibold">París, Francia</p>
       </div>
-      <div>
+      <div class="fot">
         <img src="../../assets/tokio.jpeg" alt="Tokio" class="rounded-lg shadow" />
         <p class="mt-2 font-semibold">Tokio, Japón</p>
       </div>
-      <div>
+      <div class="fot">
         <img src="../../assets/dubai.jpeg" alt="Dubái" class="rounded-lg shadow" />
         <p class="mt-2 font-semibold">Dubái, Emiratos Árabes</p>
       </div>
-      <div>
+      <div class="fot">
         <img src="../../assets/sidney.jpeg" alt="Sídney" class="rounded-lg shadow" />
         <p class="mt-2 font-semibold">Sídney, Australia</p>
       </div>
-      <div>
+      <div class="fot">
         <img src="../../assets/BuenosAires.jpeg" alt="Buenos Aires" class="rounded-lg shadow" />
         <p class="mt-2 font-semibold">Buenos Aires, Argentina</p>
       </div>
@@ -63,7 +63,7 @@
   </section>
 
 <!-- Buscador de vuelos -->
-<section  id="reserva" class="fondo py-16 px-6 bg-white max-w-4xl mx-auto">
+<section  id="reserva" class="fnd vuelo py-16 px-6  max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Busca tu vuelo</h2>
     <form (ngSubmit)="goListaVuelo()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <input type="text" placeholder="Número de vuelo" class="border p-3 rounded w-full" />
@@ -83,58 +83,82 @@
   </section>
 
    <!-- Programa Corporativo -->
-  <section *ngIf="!Name" id="beneficios" class="fondo py-16 px-6 max-w-4xl mx-auto text-center">
+  <section *ngIf="!Name" id="beneficios" class="ben py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Beneficios exclusivos para empresas y viajeros frecuentes</h2>
-    <p class="mb-4">Con nuestro programa <strong>AERIS Corporate Miles</strong>, las empresas pueden acumular millas por cada vuelo y canjearlas por descuentos, upgrades y otros beneficios exclusivos.</p>
+    <div>
+              <img src="../../assets/POSS/MILLAS.png" alt="beneficios" class="rounded-lg shadow" />
+    </div>
+    <div>
+      <p class="mb-4">Con nuestro programa <strong>AERIS Corporate Miles</strong>, las empresas pueden acumular millas por cada vuelo y canjearlas por descuentos, upgrades y otros beneficios exclusivos.</p>
     <ul class="list-disc text-left list-inside">
       <li>Millas acumulables en cuentas individuales o corporativas</li>
       <li>Descuentos automáticos en próximas reservas</li>
       <li>Reportes de consumo y tarifas especiales</li>
       <li>Atención personalizada a empresas</li>
     </ul>
-    <a href="#" class="inline-block mt-6 bg-blue-900 text-white py-2 px-4 rounded">Unirse al programa corporativo</a>
+    </div>
+    
+    <a href="#" class="reserv inline-block mt-6 bg-blue-900 text-white py-2 px-4 rounded">Unirse al programa corporativo</a>
   </section>
 
 <!-- Flota -->
-  <section *ngIf="!Name" class="fondo py-16 px-6 max-w-4xl mx-auto text-center">
+  <section *ngIf="!Name" class="fnd py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Tecnología y confort en el aire</h2>
-    <p class="mb-4">Nuestra flota moderna garantiza eficiencia, sostenibilidad y comodidad:</p>
+    <div class="div">
+              <img src="../../assets/POSS/TECH-COMFORT.png" alt="beneficios" class="rounded-lg shadow" />
+    </div>
+    <div class="div">
+ <p class="mb-4">Nuestra flota moderna garantiza eficiencia, sostenibilidad y comodidad:</p>
     <ul class="list-disc text-left list-inside">
       <li>12 Airbus A320neo (rutas regionales)</li>
       <li>8 Boeing 787 Dreamliner (vuelos internacionales)</li>
       <li>6 Embraer E195-E2 (vuelos caribeños y cortos)</li>
     </ul>
+    </div>
+   
   </section>
 
   <!-- Servicios a bordo -->
-  <section *ngIf="!Name" class=" fondo bg-gray-100 py-16 px-6 text-center">
+  <section *ngIf="!Name" class=" ben  py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-6">Una experiencia pensada para ti</h2>
-    <ul class="list-disc text-left list-inside max-w-xl mx-auto">
-      <li>Pantallas individuales y Wi-Fi de alta velocidad</li>
-      <li>Tres clases de servicio: Económica, Premium y Ejecutiva</li>
-      <li>Menús dominicanos e internacionales</li>
-      <li>Salones VIP y check-in prioritario</li>
-      <li>Programa de viajero frecuente: AERIS Rewards</li>
-    </ul>
+      <div>
+              <img src="../../assets/POSS/EXPERIENCE.png" alt="beneficios" class="rounded-lg shadow" />
+      </div>
+      <div>
+        <ul class="list-disc text-left list-inside max-w-xl mx-auto">
+            <li>Pantallas individuales y Wi-Fi de alta velocidad</li>
+            <li>Tres clases de servicio: Económica, Premium y Ejecutiva</li>
+            <li>Menús dominicanos e internacionales</li>
+            <li>Salones VIP y check-in prioritario</li>
+            <li>Programa de viajero frecuente: AERIS Rewards</li>
+        </ul>
+      </div>
   </section>
 
  
 <!-- Sobre AERIS -->
-  <section *ngIf="!Name" id="info" class=" fondo py-16 px-6 max-w-4xl mx-auto text-center">
+  <section *ngIf="!Name" id="info" class="fnd  py-16 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Sobre AERIS Airlines</h2>
+   <div>
+              <img src="../../assets/POSS/PRIMER.png" alt="beneficios" class="rounded-lg shadow" />
+
+   </div>
+   <div>
     <p>AERIS Airlines es una aerolínea dominicana de servicio completo fundada en 2015, con sede en Santo Domingo y centro de operaciones en el Aeropuerto Internacional de Las Américas (SDQ). Operamos una red global conectando América, Europa, Asia, África y Oceanía, brindando una experiencia de viaje moderna, segura y con la calidez del Caribe.</p>
-  </section>
+   </div>
+ 
 
   <!-- Sostenibilidad -->
-  <section *ngIf="!Name" class="fondo bg-gray-100 py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Volar responsablemente</h2>
     <p>En AERIS, la sostenibilidad es prioridad: flota ecoeficiente, eliminación de plásticos de un solo uso, programas de compensación de carbono y alianzas para reforestación.</p>
-  </section>
 
   <!-- Contacto -->
-  <section *ngIf="!Name" class=" fondo py-16 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
-    <p class="mb-4">Torre Empresarial del Caribe, Piso 18<br/>Av. Winston Churchill #1250, Santo Domingo, RD</p>
+ 
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-blue-900 text-white text-center py-4">
+       <p class="mb-4">Torre Empresarial del Caribe, Piso 18, Av. Winston Churchill #1250, Santo Domingo, RD</p>
     <p class="mb-2">📞 RD: +1 (809) 555-2000 | Internacional: +1 (888) 555-AERIS (23747)</p>
     <p class="mb-2">📩 {{email}}</p>
     <div class="mt-4 space-x-4">
@@ -143,10 +167,5 @@
       <a href="#" class="text-blue-600">Twitter</a>
       <a href="#" class="text-blue-600">LinkedIn</a>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-4">
-    <p>© 2025 AERIS Airlines. Todos los derechos reservados.</p>
-    <p class="text-sm">Políticas de privacidad · Términos de servicio · Mapa del sitio</p>
+    
   </footer>

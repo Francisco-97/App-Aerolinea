@@ -25,19 +25,7 @@ header h1 {
     font-size: 2.5rem;
 }
 
-nav {
-    //background: #ffffff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
+/*colocar en cada html?*/
 .nav-left,
 .nav-right {
     display: flex;
@@ -45,67 +33,92 @@ nav {
     align-items: center;
 }
 
-nav a {
+nav a,.reserv {
     text-decoration: none;
-     color: #D72638;
+     color: #80CBC4;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #f7f7ffd5;
+    color: #004D40;
 }
-
-.login-btn {
+.ben{
+     color: #CFD8DC;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #1B3B3A !important;
+    margin-top: 5%;
+}
+.login-btn, .reserv{
     padding: 0.5rem 1rem;
     border: 2px solid #85b2bd;
     border-radius: 0.5rem;
     transition: background-color 0.3s, color 0.3s;
 }
-
-.login-btn:hover {
-    background-color: #4e4b4bda;
-    color: white;
+.reserv{
+    padding: 0.5rem 1rem;
+    //border: 2px solid #85b2bd;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
 }
-
+.login-btn:hover {
+    background-color: #4DB6AC;
+    color: #004D40 !important;
+}
+.reserv:hover {
+    background-color: #4DB6AC;
+    color: #004D40 !important;
+}
 .section {
     padding: 3rem 2rem;
     max-width: 1000px;
     margin: auto;
     animation: slideUp 0.8s ease;
 }
-.card {
-  background-color: #1E1E1E;
-  padding: 30px;
-  //border-radius: 10px;
-  height: 300px;
-  margin: auto;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+.reserv {
+    //background: #ffffff;
+    padding: 1rem;
+   // display: flex;
+    background-color: #1B3B3A;
+     cursor: pointer;
+   /* justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(189, 76, 76, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;*/
 }
 #destinos{
     background: #15572400;
     color:#BFBFBF
 }
 
-.fondo{
-    margin-top: 3%;
-      background-color: #1E1E1E;
-          color:#BFBFBF;
-     box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-}
 .form-container {
     //background: white;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+.fot{
+    margin-bottom: 10% !important;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+img:hover{
+}
 
 .form-container h2 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: #2c3e50;
 }
-
+.section h2{
+    color: #80CBC4;
+}
 form {
     display: grid;
     gap: 1rem;
@@ -156,7 +169,6 @@ button:hover {
 
 .info-section h2,
 .about-section h2 {
-    color: #2c3e50;
     margin-top: 0;
 }
 
@@ -190,13 +202,6 @@ button:hover {
     font-size: 1.3rem;
 }
 
-footer {
-    background: #01050a;
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-}
 
 @keyframes slideUp {
     from {
@@ -244,33 +249,42 @@ footer {
 .form-group label {
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: #333;
+    color: #515656;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="number"] {
+
+    color: #004D40 !important;
     padding: 0.75rem;
     border-radius: 0.5rem;
-    border: 1px solid #ccc;
-    background-color: #1b7b97;
+    border: 1px solid #cccccc00;
+    background-color: #4DB6AC;
     font-size: 1rem;
+}
+.flex{
+    color: #8ba7a7;
+
 }
 
 button[type="submit"] {
-    background: #D72638;
-    color: FFFFFF;
+    background: #1B3B3A;
     border: none;
     padding: 1rem;
     border-radius: 0.5rem;
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    color: #8ba7a7;
+
 }
 
 button[type="submit"]:hover {
-    background-color: #8B1E2D;
+   background-color: #4DB6AC;
+    color: #004D40 !important;
+
 }
 
 .custom-dialog {

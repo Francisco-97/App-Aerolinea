@@ -1,0 +1,48 @@
+<section>
+<div></div>
+<div class="form-container">
+  <h2>Registro de Cliente</h2>
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" name="apellidos" required>
+
+    <label for="nacionalidad">Nacionalidad:</label>
+    <input type="text" id="nacionalidad" name="nacionalidad">
+
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id" required>
+
+    <label for="rnc">RNC:</label>
+    <input type="text" id="rnc" name="rnc">
+
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" name="sexo" required>
+      <option value="">--Seleccione--</option>
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select>
+
+    <label for="telefono">Número de Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono" placeholder="Ej: 809-555-1234" required>
+
+    <label for="tipo_cliente">Tipo de Cliente:</label>
+    <select id="tipo_cliente" name="tipo_cliente" required>
+      <option value="">--Seleccione--</option>
+      <option value="normal">Corporativo</option>
+      <option value="premium">Minorista</option>
+    </select>
+
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
+
+    <button type="submit">Crear</button>
+  </form>
+</div>
+</section>
