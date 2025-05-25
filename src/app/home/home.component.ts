@@ -17,11 +17,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 import { ListaReservacionesComponent } from '../lista-reservaciones/lista-reservaciones.component';
+import { VerMillasComponent } from '../ver-millas/ver-millas.component';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [MatButtonModule, MatDialogModule, MatCardModule, MatNativeDateModule, MatDatepickerModule,
-    MatInputModule, MatFormFieldModule, MatMenuModule, NgIf, FormsModule
+    MatInputModule, MatFormFieldModule, MatMenuModule, NgIf, FormsModule, ListaVuelosComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -31,11 +33,12 @@ export class HomeComponent {
   private toats = Inject(ToastrService);
   config: MatSnackBarConfig
   private snackBar = inject(MatSnackBar)
-  Name: string;
-  User: boolean = false
+  Name: string; //= "Usuario Corporativo";
+  User: boolean = false;
   email: string = "atencion@aerisairlines.com | info@aerisairlines.com";
   destino: string;
   origen: string;
+  verLista: boolean = false;
 
   constructor(private router: Router,
     //private dialog = inject(MatDialog),
@@ -67,6 +70,24 @@ export class HomeComponent {
   }
 
   goListaVuelo(){
+    /*const dialogRef = this.dialog.open(ListaVuelosComponent, {
+      width: '79%',
+      height: '85%',
+      maxWidth: '90vw',
+      maxHeight: '90vw',
+      data: {
+        nombre: this.Name
+      }
+    })
+    dialogRef.afterClosed().subscribe(result =>{
+      //this.notify.vueloReservado()
+      
+    })*/
+
+      this.verLista = true
+  }
+
+  goConsultaVuelo(){
     const dialogRef = this.dialog.open(ListaVuelosComponent, {
       width: '79%',
       height: '85%',
@@ -74,23 +95,29 @@ export class HomeComponent {
       maxHeight: '90vw',
       data: {
         nombre: this.Name,
-        filtro: this.origen ?? this.destino
+        origen: this.origen,
+        destino: this.destino
       }
     })
     dialogRef.afterClosed().subscribe(result =>{
       //this.notify.vueloReservado()
       
     })
-
-    //this.notify.success("Hola", "Ok")
-    //this.notify.vueloReservado()
-    //this.shormessa("Hola")
   }
 
   goreservaciones(){
     const dialogRef = this.dialog.open(ListaReservacionesComponent, {
       width: '79%',
       height: '85%',
+      maxWidth: '90vw',
+      maxHeight: '90vw',
+    })
+  }
+
+  VerMillas(){
+    const dialogRef = this.dialog.open(VerMillasComponent, {
+      width: '400px',
+      height: '290px',
       maxWidth: '90vw',
       maxHeight: '90vw',
     })

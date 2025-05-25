@@ -284,3 +284,44 @@ button[type="submit"]:hover {
   background-color: #2196f3eb;
   color: red;
 }
+
+.newyork:hover{
+    transform: scale(2.25);
+    transform: translate(100%, 80%) scale(3.3);
+    transition: 1s;
+}
+
+.paris:hover{
+    transform: scale(2.25);
+    transform: translate(0%, 50%) scale(3.1);
+    transition: 1s;
+}
+
+.tokio:hover{
+    transform: scale(2.25);
+    transform: translate(-100%, 60%) scale(3.1);
+    transition: 1s;
+}
+
+.dubai:hover{
+    transform: scale(2.25);
+    transform: translate(100%, -70%) scale(3.2);
+    transition: 1s;
+}
+
+.sidney:hover{
+    transform: scale(2.25);
+    transform: translate(0%, -70%) scale(3.1);
+    transition: 1s;
+}
+
+.argentina:hover{
+    transform: scale(2.25);
+    transform: translate(-100%, -70%) scale(3.1);
+    transition: 1s;
+}
+
+.listaDeVuelos{
+    width: 70%;
+    margin: 40px 0px 0px 20%;
+}

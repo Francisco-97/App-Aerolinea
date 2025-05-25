@@ -31,6 +31,7 @@ interface Vuelos {
 
 @Component({
   selector: 'app-lista-vuelos',
+  standalone: true,
   imports: [MatTableModule, MatCardModule, MatButtonModule, CommonModule, MatButtonModule,
     MatDialogContent, MatDialogActions, MatDialogClose, MatDialogTitle],
   templateUrl: './lista-vuelos.component.html',
@@ -39,8 +40,8 @@ interface Vuelos {
 export class ListaVuelosComponent {
    displayedColumns: string[] = [/*'airline',*/ 'from', 'to', 'departure', 'arrival', 'price', 'action'];
    displayedColumnsVuelos: string[] = ['numeroVuelo', 'asientosLibres', 'clase', 'piloto', 'origen', 'destino', 'fechaSalida', 'fechaRegreso', 'action']
-   readonly dialogref = Inject(MatDialogRef<ListaVuelosComponent>)
-   private readonly confi = Inject(MatSnackBar)
+   //readonly dialogref = Inject(MatDialogRef<ListaVuelosComponent>)
+   //private readonly confi = Inject(MatSnackBar)
    
   flights: Flight[] = [
     {
@@ -522,23 +523,33 @@ datasource = new MatTableDataSource(this.vuelos);
 
   constructor(private _notifacion: NotificacionesService,
     //private dialogreff = MatDialogRef<ListaVuelosComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    //@Inject(MAT_DIALOG_DATA) public data: any
   ){}
 
   ngOnInit(){
-    console.log(this.data.filtro)
+    /*console.log(this.data.filtro)
     this.datasource.filterPredicate = (data, filter: string) =>
         data.destino.toLocaleLowerCase().includes(filter) ||
         data.origen.toLocaleLowerCase().includes(filter);
-    if(this.data.filtro){
-      //const filtro = (this.data.filtro.target as HTMLInputElement).value;
-      this.datasource.filter = this.data.filtro.trim().toLowerCase();
-      //this.applyFilter(this.data.filtro)
+    if(this.data.destino){
+      this.datasource.filterPredicate = (data, filter: string) =>
+        data.destino.toLocaleLowerCase().includes(filter)
+
+      this.datasource.filter = this.data.destino.trim().toLowerCase();
     }
+
+    if(this.data.origen){
+      this.datasource.filterPredicate = (data, filter: string) =>
+        //data.destino.toLocaleLowerCase().includes(filter) ||
+        data.origen.toLocaleLowerCase().includes(filter);
+        
+      this.datasource.filter = this.data.origen.trim().toLowerCase();
+    }*/
   }
 
   reservar(){
-    this._notifacion.vueloReservado();
+    //const dialogRef 
+    //this._notifacion.vueloReservado();
   }
 
   applyFilter(evento: Event){

@@ -9,9 +9,9 @@
     <span style="cursor: pointer;" [matMenuTriggerFor]="menu"> {{Name}} </span>
     <!--<button mat-button [matMenuTriggerFor]="menu"> {{Name}} </button>-->
     <mat-menu #menu="matMenu">
-      <button *ngIf="User === true" mat-menu-item>Consultar Millas</button>
-      <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesion</button>
+      <button *ngIf="User === true" (click)="VerMillas()" mat-menu-item>Consultar Millas</button>
       <button mat-menu-item (click)="goreservaciones()" >Reservaciones</button>
+      <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesion</button>
     </mat-menu>
     <!--<button mat-button (click)="openDialog()" class="login-btn">Iniciar sesión</button>-->
     <!--<a href="#login" class="login-btn">Registrarse</a>-->
@@ -27,49 +27,44 @@
     </div>
   </section>
 
- <!-- Sobre AERIS -->
-  <section id="info" class="py-16 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4">Sobre AERIS Airlines</h2>
-    <p>AERIS Airlines es una aerolínea dominicana de servicio completo fundada en 2015, con sede en Santo Domingo y centro de operaciones en el Aeropuerto Internacional de Las Américas (SDQ). Operamos una red global conectando América, Europa, Asia, África y Oceanía, brindando una experiencia de viaje moderna, segura y con la calidez del Caribe.</p>
-  </section>
-
-<!-- Destinos con galería de imágenes -->
+  <!-- Destinos con galería de imágenes -->
   <section id="destinos" class="bg-gray-100 py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Destinos alrededor del mundo</h2>
     <p class="mb-8">Con más de 60 destinos, volamos a ciudades clave en los cinco continentes.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <div><!--https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/12/d8/22/50.jpg-->
-        <img src="../../assets/newyork.jpeg" alt="Nueva York" class="rounded-lg shadow" />
+        <img src="../../assets/newyork.jpeg" alt="Nueva York" class="rounded-lg shadow newyork" />
         <p class="mt-2 font-semibold">Nueva York, EE.UU.</p>
       </div>
       <div>
-        <img src="../../assets/paris.jpeg" alt="París" class="rounded-lg shadow" />
+        <img src="../../assets/paris.jpeg" alt="París" class="rounded-lg shadow paris paris" />
         <p class="mt-2 font-semibold">París, Francia</p>
       </div>
       <div>
-        <img src="../../assets/tokio.jpeg" alt="Tokio" class="rounded-lg shadow" />
+        <img src="../../assets/tokio.jpeg" alt="Tokio" class="rounded-lg shadow tokio" />
         <p class="mt-2 font-semibold">Tokio, Japón</p>
       </div>
       <div>
-        <img src="../../assets/dubai.jpeg" alt="Dubái" class="rounded-lg shadow" />
+        <img src="../../assets/dubai.jpeg" alt="Dubái" class="rounded-lg shadow dubai" />
         <p class="mt-2 font-semibold">Dubái, Emiratos Árabes</p>
       </div>
       <div>
-        <img src="../../assets/sidney.jpeg" alt="Sídney" class="rounded-lg shadow" />
+        <img src="../../assets/sidney.jpeg" alt="Sídney" class="rounded-lg shadow sidney" />
         <p class="mt-2 font-semibold">Sídney, Australia</p>
       </div>
       <div>
-        <img src="../../assets/BuenosAires.jpeg" alt="Buenos Aires" class="rounded-lg shadow" />
+        <img src="../../assets/BuenosAires.jpeg" alt="Buenos Aires" class="rounded-lg shadow argentina" />
         <p class="mt-2 font-semibold">Buenos Aires, Argentina</p>
       </div>
     </div>
-    <a href="#" class="inline-block mt-8 bg-blue-900 text-white py-2 px-4 rounded">Ver todos los destinos</a>
+    <!--<a href="#" class="inline-block mt-8 bg-blue-900 text-white py-2 px-4 rounded">Ver todos los destinos</a>-->
   </section>
 
-<!-- Buscador de vuelos -->
-<section id="reserva" class="py-16 px-6 bg-white max-w-4xl mx-auto">
+  <!-- Buscador de vuelos -->
+<!--<section id="reserva" class="py-16 px-6 bg-white max-w-4xl mx-auto">
     <h2 class="text-3xl font-bold mb-6 text-center">Busca tu vuelo</h2>
-    <form (ngSubmit)="goListaVuelo()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <button type="submit" class="">Ver millas</button>
+    <form (ngSubmit)="goConsultaVuelo()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <input type="text" placeholder="Número de vuelo" class="border p-3 rounded w-full" />
       <input type="text" placeholder="Origen" [(ngModel)]="origen" name="origen" class="border p-3 rounded w-full" />
       <input type="text" placeholder="Destino" [(ngModel)]="destino" name="destino" class="border p-3 rounded w-full" />
@@ -84,7 +79,41 @@
       </div>
       <button type="submit" class="bg-blue-900 text-white py-3 px-6 rounded mt-2 md:mt-0">Buscar</button>
     </form>
-  </section>
+  </section>-->
+
+  <section id="reserva" class="py-16 px-6 bg-white max-w-4xl mx-auto relative">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-3xl font-bold text-center mx-auto">Busca tu vuelo</h2>
+    <button *ngIf="User === true" type="button" class="absolute right-6 bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800">
+      Ver millas
+    </button>
+  </div>
+
+  <form (ngSubmit)="goListaVuelo()" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <input type="text" placeholder="Número de vuelo" class="border p-3 rounded w-full" />
+    <input type="text" placeholder="Origen" [(ngModel)]="origen" name="origen" class="border p-3 rounded w-full" />
+    <input type="text" placeholder="Destino" [(ngModel)]="destino" name="destino" class="border p-3 rounded w-full" />
+    <input type="date" placeholder="Fecha de salida" class="border p-3 rounded w-full" />
+    <input type="date" placeholder="Fecha de regreso" class="border p-3 rounded w-full" />
+    <input type="number" placeholder="Cantidad de pasajeros" min="1" class="border p-3 rounded w-full" />
+    <div class="flex items-center space-x-2">
+      <input type="radio" name="tipo" id="ida-vuelta" checked />
+      <label for="ida-vuelta">Ida y vuelta</label>
+      <input type="radio" name="tipo" id="solo-ida" />
+      <label for="solo-ida">Solo ida</label>
+    </div>
+    <button type="submit" class="bg-blue-900 text-white py-3 px-6 rounded mt-2 md:mt-0">Buscar</button>
+  </form>
+</section>
+
+
+<div *ngIf="verLista === true" class="listaDeVuelos">
+  <app-lista-vuelos></app-lista-vuelos>
+</div>
+
+
+
+
 
 <!-- Flota -->
   <section class="py-16 px-6 max-w-4xl mx-auto text-center">
@@ -119,7 +148,13 @@
       <li>Reportes de consumo y tarifas especiales</li>
       <li>Atención personalizada a empresas</li>
     </ul>
-    <a href="#" class="inline-block mt-6 bg-blue-900 text-white py-2 px-4 rounded">Unirse al programa corporativo</a>
+    <!--<a href="#" class="inline-block mt-6 bg-blue-900 text-white py-2 px-4 rounded">Unirse al programa corporativo</a>-->
+  </section>
+
+  <!-- Sobre AERIS -->
+  <section id="info" class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Sobre AERIS Airlines</h2>
+    <p>AERIS Airlines es una aerolínea dominicana de servicio completo fundada en 2015, con sede en Santo Domingo y centro de operaciones en el Aeropuerto Internacional de Las Américas (SDQ). Operamos una red global conectando América, Europa, Asia, África y Oceanía, brindando una experiencia de viaje moderna, segura y con la calidez del Caribe.</p>
   </section>
 
   <!-- Sostenibilidad -->
@@ -129,7 +164,7 @@
   </section>
 
   <!-- Contacto -->
-  <section class="py-16 px-6 text-center">
+  <!--<section class="py-16 px-6 text-center">
     <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
     <p class="mb-4">Torre Empresarial del Caribe, Piso 18<br/>Av. Winston Churchill #1250, Santo Domingo, RD</p>
     <p class="mb-2">📞 RD: +1 (809) 555-2000 | Internacional: +1 (888) 555-AERIS (23747)</p>
@@ -140,10 +175,27 @@
       <a href="#" class="text-blue-600">Twitter</a>
       <a href="#" class="text-blue-600">LinkedIn</a>
     </div>
-  </section>
+  </section>-->
 
   <!-- Footer -->
-  <footer class="bg-blue-900 text-white text-center py-4">
+  <!--<footer class="bg-blue-900 text-white text-center py-4">
     <p>© 2025 AERIS Airlines. Todos los derechos reservados.</p>
     <p class="text-sm">Políticas de privacidad · Términos de servicio · Mapa del sitio</p>
-  </footer>
+  </footer>-->
+
+  <footer class="bg-blue-900 text-white text-center py-10 px-6">
+  <h2 class="text-3xl font-bold mb-4">Contáctanos</h2>
+  <p class="mb-2">Torre Empresarial del Caribe, Piso 18<br/>Av. Winston Churchill #1250, Santo Domingo, RD</p>
+  <p class="mb-2">📞 RD: +1 (809) 555-2000 | Internacional: +1 (888) 555-AERIS (23747)</p>
+  <p class="mb-4">📩 {{email}}</p>
+  <div class="mb-6 space-x-4">
+    <a href="#" class="text-blue-300 hover:underline">Facebook</a>
+    <a href="#" class="text-blue-300 hover:underline">Instagram</a>
+    <a href="#" class="text-blue-300 hover:underline">Twitter</a>
+    <a href="#" class="text-blue-300 hover:underline">LinkedIn</a>
+  </div>
+  <div class="border-t border-blue-700 pt-4 text-sm">
+    <p>© 2025 AERIS Airlines. Todos los derechos reservados.</p>
+    <p class="mt-1">Políticas de privacidad · Términos de servicio · Mapa del sitio</p>
+  </div>
+</footer>
